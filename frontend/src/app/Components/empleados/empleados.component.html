@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+             <!-- #employeeForm es un "Nombre de variable" para todo el formulario-->
+             <form #employeeForm= "ngForm" (ngSubmit) = "addEmployee(employeeForm)">
+                        
+                    
+                         <div class="input field col s12">
+                            <!--#name es el nombre de variable al imput-->
+                             <input type="text" name="Nombre" #Nombre= "ngModel" 
+                             [(ngModel)]="empleadoService.selectedEmployee.name"
+                             placeholder="Ingresa tu nombre">
+                         </div>
+                          <div class="input field col s12">    
+                             <input type="text" name="Puesto" #Puesto= "ngModel" 
+                             [(ngModel)]="empleadoService.selectedEmployee.puesto"
+                             placeholder="Ingresa tu puesto">
+                         </div>
+                         <div class="input field col s12">    
+                             <input type="text" name="Oficina" #Oficina= "ngModel" 
+                             [(ngModel)]="empleadoService.selectedEmployee.oficina"
+                             placeholder="Ingresa tu oficina">
+                         </div>
+                         <div class="input field col s12">    
+                             <input type="text" name="Salario" #Salario= "ngModel" 
+                             [(ngModel)]="empleadoService.selectedEmployee.Salario"
+                             placeholder="Ingresa tu Salario">
+                         </div>  
+
+
+                         <div class="col">                                                        
+                                <button type="button" 
+                                class="btn btn-success"  (click)="addEmployee(employeeForm)"
+                                style="margin-left: 2px">Guardar</button>
+                                <button type="button" (click)="limpiarFormulario(employeeForm)" 
+                                class="btn btn-danger" style="margin-right: 10px">Limpiar</button>                                
+                        </div>    
+                    
+
+                 </form>
+
+        </div>
+
+           <div class="col s7">
+                    <table>
+                        <thead>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Oficina</th>
+                            <th>Salario</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let  employee of empleadoService.employees " >
+                                 <td>{{employee.Nombre}}</td>
+                                 <td>{{employee.Puesto}}</td>
+                                 <td>{{employee.Oficina}}</td>
+                                 <td>{{employee.Salario}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+    </div>
+
+    
+
+</div>
