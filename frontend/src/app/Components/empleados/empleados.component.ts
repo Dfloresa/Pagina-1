@@ -4,7 +4,7 @@ import { from } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Empleado } from 'src/app/models/empleado';
 import Swal from 'sweetalert2';
-
+import {} from '../../../../../server/database.js';
 
 
 
@@ -25,6 +25,29 @@ export class EmpleadosComponent implements OnInit {
   }
 
   addEmployee(form: NgForm){
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+    db.collection("users").add({
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815
+  })
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+  
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////
     this.empleadoService.postEmployees(form.value).subscribe(res => {
       console.log(res);
       form.reset();

@@ -29,9 +29,6 @@ next();
 
 
 
-
-
-
 //Routers
 //Se agrega '/api/employees' para que todas las rutas tengan el mismo inicio
 app.use('/api/employees',require('./routes/employee.routes'));

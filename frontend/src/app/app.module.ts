@@ -9,6 +9,7 @@ import { BarraComponent } from './Components/barra/barra.component';
 import { from } from 'rxjs';
 import { ToastComponent } from './Components/toast/toast.component';
 import { Alert } from 'selenium-webdriver';
+import { PruebaComponent } from './Components/prueba/prueba.component';
 
 
 
@@ -17,7 +18,8 @@ import { Alert } from 'selenium-webdriver';
     AppComponent,
     EmpleadosComponent,
     BarraComponent,
-    ToastComponent
+    ToastComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
